@@ -3,27 +3,19 @@ using System.Data.Common;
 
 namespace TechJobsOOAutoGraded6
 {
-    public class PositionType
+    public class PositionType : JobField
     {
-        public int Id { get; set; }
-        private static int nextId = 1;
-        public string Value { get; set; }
 
-        public PositionType()
+        public PositionType(string value) : base(value)
         {
-            Id = nextId;
-            nextId++;
-        }
-
-        public PositionType(string value)
-            : this()
-        {
-            Value = value;
         }
 
         // TODO: Task 2: Add custom Equals(), GetHashCode(), and ToString() methods.
+    
+    public override string ToString()
+    {
+        return Value;
     }
-
     public override bool Equals(object obj)
     {
         return obj is PositionType type && Id == type.Id && Value == type.Value;
@@ -32,10 +24,7 @@ namespace TechJobsOOAutoGraded6
     {
         return HashCode.Combine(Id, Value);
     }
-    public override string ToString()
-    {
-        return Value;
     }
-
-
 }
+
+

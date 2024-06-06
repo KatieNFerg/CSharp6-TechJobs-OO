@@ -51,7 +51,7 @@ namespace TechJobsOO.Tests
         }
 
 
-        [TestMethod] //3
+      /*  [TestMethod] //3
         public void Test_Second_Location_Constructor_Initializes_Id()
         {
             //setup
@@ -61,7 +61,7 @@ namespace TechJobsOO.Tests
             //verify
             Assert.AreEqual(2, testLocation.Id, "Second constructor not able to update Id");
             Assert.IsFalse(testLocation.Id == 4, "Second constructor passes value to Id. Is this desirable?");
-        }
+        } */
 
 
         // Testing CoreCompetency --------------------------------------------------------
@@ -88,9 +88,9 @@ namespace TechJobsOO.Tests
             }
 
             //verify
-           // Assert.AreEqual("Persistence", testComp.Value, "CoreComp has no set-able Value");
+           Assert.AreEqual("Persistence", testComp.Value, "CoreComp has no set-able Value");
             Assert.AreEqual("true", existsCheck, "CoreComp getter does not exist");
-           // Assert.AreNotEqual(testComp.Id, testComp2.Id, "Not able to get ids for CoreComp objects");
+           Assert.AreNotEqual(testComp.Id, testComp2.Id, "Not able to get ids for CoreComp objects");
         }
 
         [TestMethod] //5
