@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Data.Common;
+
 namespace TechJobsOOAutoGraded6
 {
-	public class PositionType
-	{
-        public int Id { get; }
+    public class PositionType
+    {
+        public int Id { get; set; }
         private static int nextId = 1;
         public string Value { get; set; }
 
@@ -13,12 +15,27 @@ namespace TechJobsOOAutoGraded6
             nextId++;
         }
 
-        public PositionType(string value) : this()
+        public PositionType(string value)
+            : this()
         {
             Value = value;
         }
 
         // TODO: Task 2: Add custom Equals(), GetHashCode(), and ToString() methods.
     }
-}
 
+    public override bool Equals(object obj)
+    {
+        return obj is PositionType type && Id == type.Id && Value == type.Value;
+    }
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(Id, Value);
+    }
+    public override string ToString()
+    {
+        return Value;
+    }
+
+
+}
